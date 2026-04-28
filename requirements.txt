@@ -5,4 +5,4 @@ numpy
 matplotlib
 plotly
 seaborn
-scikit-learn==1.8.0
+scikit-learn==1.7.2
