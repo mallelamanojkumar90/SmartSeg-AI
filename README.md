@@ -1,18 +1,11 @@
 ---
----
-
-title: SmartSeg-AI
-emoji: 🚀
+title: SmartSeg AI
+emoji: 🤖
 colorFrom: blue
 colorTo: green
 sdk: gradio
-sdk_version: "4.44.0"
-python_version: "3.10"
+sdk_version: 5.0.0
 app_file: app.py
-pinned: false
-
----
-
 ---
 
 # 🤖 SmartSeg AI – Advanced Customer Segmentation Dashboard
@@ -30,7 +23,6 @@ SmartSeg AI is a professional machine learning application that uses K-Means clu
 ## 📊 Dataset
 
 The project uses the **Mall Customer Segmentation** dataset, which includes:
-
 - Gender
 - Age
 - Annual Income (k$)
@@ -39,20 +31,17 @@ The project uses the **Mall Customer Segmentation** dataset, which includes:
 ## 🛠️ Installation & Local Setup
 
 1. **Clone the repository:**
-
    ```bash
    git clone https://huggingface.co/spaces/your-username/smartseg-ai
    cd smartseg-ai
    ```
 
 2. **Install dependencies:**
-
    ```bash
    pip install -r requirements.txt
    ```
 
 3. **Train the model (Optional):**
-
    ```bash
    python train.py
    ```
@@ -85,15 +74,13 @@ smartseg-ai/
 ## 🤖 Hugging Face Deployment
 
 This app is ready to be deployed to [Hugging Face Spaces](https://huggingface.co/spaces).
-
 1. Create a new Space with the **Gradio** SDK.
 2. Upload all files (including `model/` and `data/` directories).
 3. The app will automatically build and run.
 
 ## 📸 Screenshots
 
-_(Add screenshots here after running the app)_
+*(Add screenshots here after running the app)*
 
 ---
-
 Built with ❤️ by Manojkumar
