@@ -1,8 +1,8 @@
 gradio==4.44.0
 huggingface_hub==0.23.0
-scikit-learn
 pandas
 numpy
 matplotlib
 plotly
 seaborn
+scikit-learn==1.8.0
