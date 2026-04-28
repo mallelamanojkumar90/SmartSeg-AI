@@ -143,4 +143,4 @@ with gr.Blocks(theme=gr.themes.Soft(), title="SmartSeg AI") as demo:
     demo.load(predict_and_visualize, [gender, age, income, spending], [output_text, plot_scatter, plot_pca])
 
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=7860)
+    demo.launch(server_name="0.0.0.0", server_port=7860, share=True)
