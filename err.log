@@ -1,2 +1,0 @@
-C:\Manojkumar\Projects\SmartSeg-AI\app.py:110: UserWarning: The parameters have been moved from the Blocks constructor to the launch() method in Gradio 6.0: theme. Please pass these parameters to launch() instead.
-  with gr.Blocks(theme=gr.themes.Soft(), title="SmartSeg AI") as demo:

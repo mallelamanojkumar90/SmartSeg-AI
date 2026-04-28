@@ -51,23 +51,26 @@ def predict_and_visualize(gender, age, income, spending_score):
     temp_df['Type'] = 'Existing Customer'
     
     # (A) Cluster Scatter Plot (Income vs Spending)
+    # Ensure background data is plotted first
     fig_scatter = px.scatter(
-        temp_df, x='Annual Income (k$)', y='Spending Score (1-100)',
-        color='Cluster', symbol='Type',
+        df_clustered, x='Annual Income (k$)', y='Spending Score (1-100)',
+        color='Cluster', 
         title='Customer Segments: Income vs Spending',
         color_continuous_scale='Viridis',
-        labels={'Cluster': 'Segment ID'}
+        labels={'Cluster': 'Segment ID'},
+        opacity=0.6  # Make existing customers slightly transparent
     )
     
-    # Add user point
+    # Add user point on top with distinct styling
     fig_scatter.add_trace(
         go.Scatter(
             x=[income], y=[spending_score],
             mode='markers',
-            marker=dict(color='red', size=15, symbol='star', line=dict(width=2, color='white')),
+            marker=dict(color='red', size=18, symbol='star', line=dict(width=2, color='white')),
             name='YOU'
         )
     )
+    fig_scatter.update_layout(legend_title_text='Segments')
     
     # (B) PCA Visualization
     pca = PCA(n_components=2)
@@ -84,17 +87,19 @@ def predict_and_visualize(gender, age, income, spending_score):
         df_pca, x='PC1', y='PC2',
         color='Cluster',
         title='PCA: 2D Cluster Separation',
-        color_continuous_scale='Plasma'
+        color_continuous_scale='Plasma',
+        opacity=0.6
     )
     
     fig_pca.add_trace(
         go.Scatter(
             x=[user_pca[0][0]], y=[user_pca[0][1]],
             mode='markers',
-            marker=dict(color='red', size=15, symbol='star', line=dict(width=2, color='white')),
+            marker=dict(color='red', size=18, symbol='star', line=dict(width=2, color='white')),
             name='YOU'
         )
     )
+    fig_pca.update_layout(legend_title_text='Segments')
 
     result_md = f"""
     ### 🎯 Prediction: {info['label']}
@@ -143,4 +148,4 @@ with gr.Blocks(theme=gr.themes.Soft(), title="SmartSeg AI") as demo:
     demo.load(predict_and_visualize, [gender, age, income, spending], [output_text, plot_scatter, plot_pca])
 
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=7860, share=True)
+    demo.launch(server_name="127.0.0.1", server_port=7860)
