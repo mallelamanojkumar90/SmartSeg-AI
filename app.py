@@ -125,7 +125,7 @@ def predict_and_visualize(gender, age, income, spending_score):
     return result_md, fig_scatter, fig_pca
 
 # Build Gradio Interface
-with gr.Blocks(title="SmartSeg AI") as demo:
+with gr.Blocks(theme=gr.themes.Soft(), title="SmartSeg AI") as demo:
     gr.Markdown("""
     # 🤖 SmartSeg AI – Advanced Customer Segmentation
     ### Analyze and categorize customers in real-time using Machine Learning.
@@ -162,4 +162,4 @@ with gr.Blocks(title="SmartSeg AI") as demo:
 
 if __name__ == "__main__":
     # Use 0.0.0.0 as server_name for Hugging Face Spaces and local access
-    demo.launch(server_name="0.0.0.0", server_port=7860, theme=gr.themes.Soft())
+    demo.launch(server_name="0.0.0.0", server_port=7860)
