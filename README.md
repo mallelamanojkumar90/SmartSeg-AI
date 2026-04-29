@@ -74,7 +74,11 @@ smartseg-ai/
 
 ## 🤖 Hugging Face Deployment
 
-This app is ready to be deployed to [Hugging Face Spaces](https://huggingface.co/spaces).
+The live version of this app is hosted on [Hugging Face Spaces](https://huggingface.co/spaces/mallelamanoj75/SmartSeg-AI).
+
+**View the Live Demo:** [https://huggingface.co/spaces/mallelamanoj75/SmartSeg-AI](https://huggingface.co/spaces/mallelamanoj75/SmartSeg-AI)
+
+### How to Deploy Your Own
 1. Create a new Space with the **Gradio** SDK.
 2. Upload all files (including `model/` and `data/` directories).
 3. The app will automatically build and run.
